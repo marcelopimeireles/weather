@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Solway:300&display=swap');
+
+:host {
+  z-index: 10;
+}
+
+.container {
+  margin-top: 25vh;
+
+  .cities-panel {
+    display: flex;
+    flex-direction: row;
+    min-height: 50vh;
+    max-height: calc(100vh - 22em);
+    background: transparent;
+
+    .item {
+      flex: 1;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: none;
+      transition: flex 0.8s ease;
+      overflow: hidden;
+      border-width: 2px;
+      border-style: solid;
+      border-image:
+        linear-gradient(
+          to bottom,
+          rgba(beige, 0),
+          rgba(beige, .5),
+          rgba(beige, 0)
+        ) 1 100%;
+
+      &:hover {
+        flex: 4;
+        display: flex;
+        flex-direction: row;
+
+        .cities-panel & ~:not(:hover) {
+          flex-direction: row;
+
+          .main {
+            display: inline-flex;
+            flex-direction: column;
+            text-align: left;
+            max-width: 20%;
+
+            p span {
+              display: block;
+              opacity: 1;
+              transition: opacity 2s linear;
+            }
+          }
+
+          .detail {
+            display: inline-flex;
+            flex-direction: column;
+            display: inline;
+            transition: opacity 2s linear, 4s linear;
+          }
+        }
+
+        .main {
+          margin: 0 auto;
+          max-width: 25%;
+          text-align: center;
+
+          p span {
+            opacity: 1;
+            transition: opacity .2s linear;
+          }
+        }
+
+        .detail {
+          display: inline-flex;
+          opacity: 1;
+          margin: 0 auto;
+          max-width: 80%;
+          text-align: center;
+          transition: opacity 2s, display 4s linear;
+          height: 100%;
+        }
+      }
+
+      .main {
+        margin-left: 5%;
+        max-width: 85%;
+        text-align: center;
+
+        h4 {
+          font-family: 'Solway', serif;
+          font-weight: 300;
+          font-size: 2rem;
+          letter-spacing: -.1rem;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        p {
+          &.degree {
+            font-family: 'Solway', serif;
+            font-weight: 300;
+
+            sup, small {
+              opacity: .5;
+              letter-spacing: -.1em;
+            }
+          }
+
+          span {
+            opacity: 0;
+            transition: opacity .2s linear;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      .detail {
+        display: none;
+        opacity: 0;
+        transition: opacity 2s, display 4s linear;
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,101 @@
+<div class="container">
+  <ng-container *ngIf="weather$ | async as weather; else loading">
+    <div class="cities-panel align-center">
+      <div *ngFor="let city of cities" ngClass="item item-{{city}}">
+
+        <div class="main align-center">
+          <h4 class="text-capitalize">{{ city }}</h4>
+          <p class="align-center">Mon, 12PM<br/><span>Mostly Sunny</span></p>
+          <div class="d-flex justify-content-center">
+            <p class="display-3 degree">23</p>
+            <p class="display-5"><sup>o</sup><small>C</small></p>
+          </div>
+          <div class="d-flex px-2 justify-content-between mb-4">
+            <small>21 km/h</small>
+            <small>21 km/h</small>
+          </div>
+        </div>
+
+        <div class="detail">
+            <table class="table table-borderless table-sm mb-0">
+              <tbody>
+                <tr>
+                  <td class="font-weight-normal align-middle">Tuesday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">24&deg;<span class="text-muted">/12&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-sun fa-lg amber-text"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">Wednesday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">19&deg;<span class="text-muted">/10&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-cloud-sun-rain fa-lg text-info"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">Thursday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">23&deg;<span class="text-muted">/15&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-sun fa-lg amber-text"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">Friday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">26&deg;<span class="text-muted">/19&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-sun fa-lg amber-text"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">Saturday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">20&deg;<span class="text-muted">/16&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-cloud fa-lg text-info"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">Sunday</td>
+                  <td class="float-right font-weight-normal">
+                    <p class="mb-1">22&deg;<span class="text-muted">/13&deg;</span></p>
+                  </td>
+                  <td class="float-right mr-3">
+                    <i class="fas fa-cloud-sun fa-lg text-info"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <div class="col-md-12 text-center" *ngIf="error">
+      <h1>¯\_(ツ)_/¯</h1>
+      <h3>Oh oh... something went wrong</h3>
+      <p>Please, try again later.</p>
+      <button type="button" class="btn btn-secondary" (click)="getData()">
+        Try again
+      </button>
+    </div>
+
+    <div class="col-md-12 text-center" *ngIf="!error">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<ng-template #dangerTpl>
+    {{ error }}
+  </ng-template>

@@ -3,6 +3,10 @@ $grey: #CCC;
 $black: #000;
 $color-sun: #F2EF88;
 
+:host {
+  z-index: 1;
+}
+
 .sun {
   position: absolute;
   margin-top: 0px;
@@ -36,6 +40,7 @@ $color-sun: #F2EF88;
   left: 85%;
   margin: 0;
   overflow: hidden;
+  z-index: 1;
 
   animation: pulse-moon 2s ease infinite alternate;
   transition: all 1.1s 0s ease;
@@ -82,7 +87,6 @@ $color-sun: #F2EF88;
   top: 0;
   left: 0;
   transition: all 0.8s 0s ease;
-  z-index: 1000;
 
   &.night {
     opacity: 1;

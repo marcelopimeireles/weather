@@ -8,7 +8,7 @@ import { format } from 'date-fns'
 })
 export class CurrentDateComponent {
   date: Date;
-  calendar: Array<string>;
+  calendar: string[];
 
   constructor() {
     this.date = new Date();

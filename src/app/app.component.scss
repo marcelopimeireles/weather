@@ -31,23 +31,23 @@ $cities: 'lisbon','madrid','london','paris', 'berlin';
       background: $gradient-night;
       transition: background 1s ease-in-out;
 
-      // @each $city in $cities {
-      //   &.#{$city}-bg {
-      //     background: url(../assets/#{$city}.png) center bottom no-repeat,
-      //                 $gradient-night;
-      //     background-size: contain;
-      //   }
-      // }
+      @each $city in $cities {
+        &.#{$city}-bg {
+          background: url(../assets/#{$city}.png) center bottom no-repeat,
+                      $gradient-night;
+          background-size: contain;
+        }
+      }
     }
   }
 
-  // @each $city in $cities {
-  //   &.#{$city}-bg {
-  //     background: url(../assets/#{$city}.png)
-  //                 center bottom no-repeat, $gradient-day;
-  //     background-size: contain;
-  //   }
-  // }
+  @each $city in $cities {
+    &.#{$city}-bg {
+      background: url(../assets/#{$city}.png)
+                  center bottom no-repeat, $gradient-day;
+      background-size: contain;
+    }
+  }
 
   nav {
     &.navbar-transparent {

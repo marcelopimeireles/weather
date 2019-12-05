@@ -1,4 +1,6 @@
-<div class="content-fluid time-circle" [class.night]="!isDay">
+<div class="content-fluid time-circle"
+     [class.night]="!isDay"
+     [ngClass]="cityBgClass">
   <nav class="navbar navbar-transparent shadow-none">
     <a class="navbar-brand" href="#">
       {{ title }}
@@ -11,4 +13,5 @@
     </div>
   </nav>
   <app-day-background [isDay]="isDay"></app-day-background>
+  <app-cities-panel></app-cities-panel>
 </div>
