@@ -1,0 +1,79 @@
+$white: #FFF;
+$grey: #CCC;
+$black: #000;
+$color-day-01: #BE4405;
+$color-day-02: #F6C60C;
+$color-sun: #F2EF88;
+$color-night-01: #111936;
+$color-night-02: #285A7B;
+$gradient-day: linear-gradient(to bottom, $color-day-01, $color-day-02);
+$gradient-night: linear-gradient(to bottom, $color-night-01, $color-night-02);
+$cities: 'lisbon','madrid','london','paris', 'berlin';
+
+.content-fluid {
+  height: 100vh;
+  color: $white;
+
+  &.time-circle {
+    position: absolute;
+    padding: 0px;
+    margin: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    border:none;
+    background: $gradient-day;
+    text-align: center;
+
+    transition: background 1s ease-in-out;
+
+    &.night {
+      background: $gradient-night;
+      transition: background 1s ease-in-out;
+
+      // @each $city in $cities {
+      //   &.#{$city}-bg {
+      //     background: url(../assets/#{$city}.png) center bottom no-repeat,
+      //                 $gradient-night;
+      //     background-size: contain;
+      //   }
+      // }
+    }
+  }
+
+  // @each $city in $cities {
+  //   &.#{$city}-bg {
+  //     background: url(../assets/#{$city}.png)
+  //                 center bottom no-repeat, $gradient-day;
+  //     background-size: contain;
+  //   }
+  // }
+
+  nav {
+    &.navbar-transparent {
+      background: transparent;
+      font-size: 1.2rem;
+    }
+    a {
+      &.navbar-brand {
+        color: $white;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: .5em;
+        padding: 0 .5em;
+        border: 3px solid $white
+      }
+
+      &.logo {
+        color: $white;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 0;
+
+        &:hover, &:active, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
