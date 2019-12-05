@@ -1,0 +1,9 @@
+Today is
+<div *ngFor="let item of calendar; let i = index"
+    class="m-1"
+    [attr.data-index]="i"
+    [class.pane]="i !== 4"
+    [class.d-inline]="i === 4"
+    [class.ml-3]="i === 0">
+    <span [class.m2]="i === 4">{{item}}</span>
+</div>
